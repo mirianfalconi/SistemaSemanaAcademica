@@ -9,9 +9,17 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
-*/
+
 
 Route::get('/', 'WelcomeController@index');
+*/
+Route::get('/', function () {
+    $tasks = 'ooooo';
+
+    return view('tasks', [
+        'tasks' => $tasks
+    ]);
+});
 
 Route::get('home', 'HomeController@index');
 
