@@ -24,4 +24,6 @@ build:
         name: echo
         code: |
           echo "hello world!"
-
+        namespace: App
+        psr4_prefix: App
+        src_path: app
