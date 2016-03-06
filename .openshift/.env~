@@ -14,6 +14,13 @@ SESSION_DRIVER=file
 # APP_KEY=(set automatiically using OPENSHIFT_SECRET_TOKEN, do not modify)
 
 # DB_DRIVER=(set automatiically using OPENSHIFT_<database>_DB_<property>, do not modify)
+
+DB_HOST="127.3.184.2"
+DB_PORT="3306"
+DB_DATABASE="ESCOLA"
+DB_USERNAME="admin9fXTlKU"
+DB_PASSWORD="Emn_PJtnwhS8"
+
 # DB_HOST=(set automatiically using OPENSHIFT_<database>_DB_HOST, do not modify)
 # DB_PORT=(set automatiically using OPENSHIFT_<database>_DB_PORT, do not modify)
 # DB_DATABASE=(set automatiically using OPENSHIFT_APP_NAME, do not modify)
