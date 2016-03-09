@@ -5,47 +5,19 @@
 .row,
 .column {
     box-sizing: border-box;
+    word-wrap: break-word;
 }
 
-.row:before,
-.row:after {
-    content: " ";
-    display: table;
-}
-
-.row:after {
-    clear: both;
-}
-
-.column {
-    position: relative;
-    float: left;
-    display: block;
-}
-
-.column + .column {
+.column  {
     margin-left: 1.6%;
 }
 
-.column-3 {
-    width: 23.8%;
-}
-
-.column-4 {
-    width: 32.2666666667%;
-}
-
-.column-6 {
-    width: 49.2%;
-}
 
 @media only screen and (max-width: 550px) {
-    .column-3,
-    .column-4,
-    .column-6
+    .row
     {
-        float: none;
-        width: auto;
+        float: none !important;
+        width: auto !important;
     }
 
     .column + .column {
@@ -56,49 +28,81 @@
 /*------------------------------*\
     Styling
 \*------------------------------*/
+input[type=checkbox]{
+  display: none;
+}
+
+input[type=checkbox]:checked + label {
+    outline: 2px solid #21b4d0;
+}
+
+#cursos {
+	transform: rotate(90deg);
+	transform-origin: 0 0;
+  position: absolute;
+}
+
+article {
+  margin-left: 1.6%;
+}
 
 body {
-    padding: 20px;
+    padding: 25px;
+    font-family: "Times New Roman", Georgia, Serif;
+    text-align: justify;
+}
+
+.center {
+  text-align: center;
+  background: #00A3E8 !important;
+  color: #fff !important;
+  font-family: Century,Arial,Helvetica,sans-serif;
+  font-size: 1.2em;
+}
+
+.btn {
+  border-radius: 28px;
+  border: none;
+  color: #ffffff;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55%;
+
 }
 
 .column {
     background: #eee;
-    border: 1px solid #ccc;
     border-radius: 4px;
     color: #777;
     padding: 5px;
     min-height: 30px;
-    text-align: center;
+    margin-bottom: 8px;
 }
 
 .row {
-    margin-bottom: 10px;
+  -webkit-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 32.2666666667%;
 }
 
-.row:last-child {
-    margin-bottom: 0;
-}
 
 .column .column {
     color: #eee;
     background: #333;
     border-color: #000;
-}
-
-.p {
-  font-size: 14px;
-  text-align: center;
-  padding-top: 100px;
-}
-
-@media only screen and (max-width: 550px) {
-    .row {
-        margin-bottom: 0;
-    }
-    .column {
-        margin-bottom: 10px;
-    }
-    .row:last-child .column:last-child {
-        margin-bottom: 0;
-    }
 }
