@@ -64,20 +64,6 @@
 
                 $( "input[type=checkbox]" ).on( "click", countChecked );
 
-                var myObject = {
-                  a: {
-                    one: 1,
-                    two: 2,
-                    three: 3
-                  },
-                  b: [ 1, 2, 3 ]
-                };
-                var shallowEncoded = $.param( myObject, true );
-                var shallowDecoded = decodeURIComponent( shallowEncoded );
-
-                alert( shallowEncoded );
-                alert( shallowDecoded );
-
             </script>
 
 
