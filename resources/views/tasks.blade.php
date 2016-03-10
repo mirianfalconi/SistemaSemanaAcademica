@@ -10,7 +10,7 @@
           <div class="row">
               <div class="column center">Quinta-Feira</div>
               @foreach ($quinta as $task)
-                <input type="checkbox" id='{{ $task->id }}' name='quinta' value='{{ $task->id }}' >
+                <input type="checkbox" id='{{ $task->id }}' name='{{ $task->id }}' value='{{ $task->id }}' >
                 <label for='{{ $task->id }}' class="column">
                   <strong>Horário: </strong>{{ $task->horario }} <br>
                   <strong>Professor: </strong>{{ $task->professor }} <br>
@@ -21,7 +21,7 @@
           <div class="row">
               <div class="column center">Sexta-Feira</div>
               @foreach ($sexta as $task)
-                <input type="checkbox" id='{{ $task->id }}' name='sexta' value='{{ $task->id }}'>
+                <input type="checkbox" id='{{ $task->id }}' name='{{ $task->id }}' value='{{ $task->id }}'>
                 <label for='{{ $task->id }}' class="column">
                   <strong>Horário: </strong>{{ $task->horario }} <br>
                   <strong>Professor: </strong>{{ $task->professor }} <br>
@@ -32,7 +32,7 @@
           <div class="row">
               <div class="column center">Sábado</div>
               @foreach ($sabado as $task)
-                <input type="checkbox" id='{{ $task->id }}' name='sabado' value='{{ $task->id }}'>
+                <input type="checkbox" id='{{ $task->id }}' name='{{ $task->id }}' value='{{ $task->id }}'>
                 <label for='{{ $task->id }}' class="column">
                   <strong>Horário: </strong>{{ $task->horario }} <br>
                   <strong>Professor: </strong>{{ $task->professor }} <br>
@@ -52,14 +52,13 @@
             <script>
                 var countChecked = function() {
                   var n = $( "input:checked" ).length;
-                  var n = $( "input:checked" ).name;
                   $( "#cursos" ).text( "Tu estás matriculado em " + n + (n === 1 ? " curso." : " cursos."));
                 };
                 countChecked();
 
                 $( "#inscricao" ).click(function() {
                   var cursos = $( "input:checked" ).serialize();
-                  console.log(cursos.name);
+                  console.log(cursos);
                 });
 
                 $( "input[type=checkbox]" ).on( "click", countChecked );
