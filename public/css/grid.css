@@ -23,6 +23,10 @@
     .column + .column {
         margin-left: 0;
     }
+
+    footer {
+      position: relative;
+    }
 }
 
 /*------------------------------*\
@@ -80,7 +84,6 @@ footer {
   bottom: 0;
   right: 0;
   width: 55%;
-
 }
 
 .column {
