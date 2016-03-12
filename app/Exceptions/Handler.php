@@ -27,15 +27,15 @@ class Handler extends ExceptionHandler {
 		return parent::report($e);
 	}
 
-	/**
-	 * Render an exception into an HTTP response.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \Exception  $e
-	 * @return \Illuminate\Http\Response
-	 */
 	public function render($request, Exception $e)
 	{
+
+		if($request->ajax())
+       {
+            return response()->json([
+                'responseText' => $e->getMessage()
+            ], 500);
+        }
 		return parent::render($request, $e);
 	}
 
