@@ -17,9 +17,7 @@ class UserController extends Controller {
 
 	public function postIndex(UserFormRequest $request)
 	{
-      $data = $request->all();
       User::create($request->all());
-      dd($data);
 	}
 
   public function anyLogin()
