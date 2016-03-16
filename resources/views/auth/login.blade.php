@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layout.app')
 
 @section('content')
 <div class="container-fluid">
@@ -22,16 +22,16 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label">E-Mail</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+								<input type="email" class="form-control" name="email" value="{{ old('email') }}" max="45">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
+							<label class="col-md-4 control-label">Senha</label>
 							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
+								<input type="password" class="form-control" name="password" max="45">
 							</div>
 						</div>
 
@@ -39,7 +39,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" name="remember"> Remember Me
+										<input type="checkbox" name="remember"> Lembre-me
 									</label>
 								</div>
 							</div>
@@ -49,7 +49,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">Login</button>
 
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
+								<a class="btn btn-link" href="{{ url('/password/email') }}">Esqueceu sua senha?</a>
 							</div>
 						</div>
 					</form>

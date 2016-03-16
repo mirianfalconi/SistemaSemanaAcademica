@@ -1,6 +1,7 @@
 <?php namespace app\Http\Controllers;
 
 use app\Task;
+use app\RelTaskUser;
 use DB;
 use app\Http\Requests;
 use app\Http\Controllers\Controller;
@@ -8,6 +9,11 @@ use app\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller {
+
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	public function index()
 	{
@@ -24,9 +30,8 @@ class TaskController extends Controller {
 	}
 
 
-	public function store()
-	{
-		//
+	public function store(){
+		return RelTaskUser::create($request->all());
 	}
 
 	public function showQuinta()
@@ -42,22 +47,6 @@ class TaskController extends Controller {
 	public function showSabado()
 	{
 		return DB::table('tasks')->where('dia', '=', 'sabado')->get();
-	}
-
-	public function edit($id)
-	{
-		//
-	}
-
-
-	public function update($id)
-	{
-		//
-	}
-
-	public function destroy($id)
-	{
-		//
 	}
 
 }

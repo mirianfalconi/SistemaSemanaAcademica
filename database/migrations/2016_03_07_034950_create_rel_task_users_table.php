@@ -15,8 +15,10 @@ class CreateRelTaskUsersTable extends Migration {
 		Schema::create('rel_task_users', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('user_cpf')->index();
-			$table->integer('task_id')->index();
+			$table->string('user_cpf', 15)->unique();
+			$table->foreign('user_cpf')->references('cpf')->on('users');
+			$table->integer('task_id')->unsigned();
+			$table->foreign('task_id')->references('id')->on('tasks');
 			$table->timestamps();
 		});
 	}

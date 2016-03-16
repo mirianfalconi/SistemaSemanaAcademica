@@ -2,15 +2,23 @@
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Model  {
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract  {
+
+	use Authenticatable, CanResetPassword;
+
 
 	protected $table = 'users';
-	protected $fillable = ['cpf', 'nome', 'email', 'telefone'];
+	protected $fillable = ['cpf', 'nome', 'email', 'telefone', 'password'];
 
-/*	public function relTaskUser()
-    {
-        return $this->belongsTo(RelTaskUser::class);
-    }
-*/
+	protected $hidden = ['password', 'remember_token'];
+
+	public function relTaskUser()
+  {
+			return $this->hasMany(RelTaskUser::class);
+  }
+
 }

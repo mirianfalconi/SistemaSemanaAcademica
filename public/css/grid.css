@@ -2,31 +2,37 @@
     Grid System
 \*------------------------------*/
 
-.row,
-.column {
+.linha,
+.coluna {
     box-sizing: border-box;
     word-wrap: break-word;
 }
 
-.column  {
+.coluna  {
     margin-left: 1.6%;
 }
 
 
 @media only screen and (max-width: 550px) {
-    .row
+    .linha
     {
         float: none !important;
         width: auto !important;
     }
 
-    .column + .column {
+    .coluna + .coluna {
         margin-left: 0;
     }
 
-    footer {
-      position: relative;
-    }
+
+}
+@media only screen and (min-width: 550px) {
+  footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 55%;
+  }
 }
 
 /*------------------------------*\
@@ -40,23 +46,18 @@ input[type=checkbox]:checked + label {
     outline: 2px solid #21b4d0;
 }
 
-#cursos {
-	transform: rotate(90deg);
-	transform-origin: 0 0;
-  position: absolute;
-}
 
 article {
   margin-left: 1.6%;
 }
 
 body {
-    padding: 25px;
+
     font-family: "Times New Roman", Georgia, Serif;
     text-align: justify;
 }
 
-.center {
+.centro {
   text-align: center;
   background: #00A3E8 !important;
   color: #fff !important;
@@ -79,14 +80,7 @@ body {
   text-decoration: none;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 55%;
-}
-
-.column {
+.coluna {
     background: #eee;
     border-radius: 4px;
     color: #777;
@@ -95,7 +89,7 @@ footer {
     margin-bottom: 8px;
 }
 
-.row {
+.linha {
   -webkit-flex-direction: column;
   display: flex;
   flex-direction: column;
@@ -104,7 +98,7 @@ footer {
 }
 
 
-.column .column {
+.coluna .coluna {
     color: #eee;
     background: #333;
     border-color: #000;

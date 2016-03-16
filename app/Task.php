@@ -6,4 +6,6 @@ class Task extends Model {
 
 	protected $table = 'tasks';
 	protected $fillable = ['id', 'curso', 'professor', 'dia', 'horario'];
+
+	
 }

@@ -15,7 +15,6 @@ class CreateTasksTable extends Migration {
 			$table->string('professor');
 			$table->string('dia');
 			$table->string('horario');
-			$table->timestamps();
 		});
 	}
 

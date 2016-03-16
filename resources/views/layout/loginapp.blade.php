@@ -7,9 +7,10 @@
 	<title>Semana Acadêmica</title>
 
 
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/grid.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/login.css') }}" rel="stylesheet">
+	<script type="text/javascript" src="{{ asset('js/jquery.2.2.1.min.js') }}"></script>
 
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet'>
 
 </head>
 <body>
@@ -44,7 +45,10 @@
 		</div>
 	</nav>
 
+
 	@yield('content')
+
+
 
 </body>
 </html>

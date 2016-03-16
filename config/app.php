@@ -146,7 +146,7 @@ return [
 		'app\Providers\EventServiceProvider',
 		'app\Providers\RouteServiceProvider',
 		'app\Providers\BladeServiceProvider',
-
+		'app\Providers\HtmlServiceProvider',
 
 	],
 
