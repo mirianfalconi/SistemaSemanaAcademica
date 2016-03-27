@@ -1,7 +1,8 @@
 <?php
 
-Route::get('/', 'TaskController@index');
-Route::post('/', 'TaskController@store');
+Route::resource('/', 'TaskController', [
+    'only' => ['index', 'create', 'store']
+]);
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

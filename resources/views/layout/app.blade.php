@@ -10,6 +10,8 @@
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet'>
+	<script type="text/javascript" src="{{ asset('js/jquery.2.2.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
 
 </head>
 <body>

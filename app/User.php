@@ -1,5 +1,6 @@
 <?php namespace app;
 
+use app\Task;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -10,15 +11,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	use Authenticatable, CanResetPassword;
 
-
+//	protected $primaryKey = 'cpf';
 	protected $table = 'users';
 	protected $fillable = ['cpf', 'nome', 'email', 'telefone', 'password'];
 
 	protected $hidden = ['password', 'remember_token'];
 
-	public function relTaskUser()
-  {
-			return $this->hasMany(RelTaskUser::class);
-  }
+		public function tasks()
+  	{
+			return $this->belongsToMany('app\Task', 'task_user')
+			->withPivot('task_id');
+
+		}
 
 }

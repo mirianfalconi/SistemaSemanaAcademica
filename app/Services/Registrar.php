@@ -10,7 +10,7 @@ class Registrar implements RegistrarContract {
 	public function validator(array $data)
 	{
 		return Validator::make($data, [
-			'cpf' =>'required',
+			'cpf' =>'required|unique:users',
 			'nome' => 'required|max:255',
 			'telefone'=>'required',
 			'email' => 'required|email|max:255|unique:users',
