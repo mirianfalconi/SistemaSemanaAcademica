@@ -32,14 +32,6 @@
 
 
 }
-@media only screen and (min-width: 550px) {
-  footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 55%;
-  }
-}
 
 /*------------------------------*\
     Styling
@@ -53,7 +45,7 @@ input[type=checkbox]:checked + label {
 }
 
 
-article {
+form {
   margin-left: 1.6%;
 }
 

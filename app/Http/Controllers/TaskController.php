@@ -58,6 +58,6 @@ class TaskController extends Controller {
 	{		return DB::table('tasks')->where('inicio', '=', date('2016-05-05'))->get();	}
 
 	private function showSabado()
-	{		return DB::table('tasks')->whereDay('inicio', '=', date('05'))->get();	}
+	{		return DB::table('tasks')->whereDay('inicio', '=', date('05'))->orderBy('inicio')->get();	}
 
 }
