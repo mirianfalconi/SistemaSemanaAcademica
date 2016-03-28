@@ -11,7 +11,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	use Authenticatable, CanResetPassword;
 
-//	protected $primaryKey = 'cpf';
+
 	protected $table = 'users';
 	protected $fillable = ['cpf', 'nome', 'email', 'telefone', 'password'];
 

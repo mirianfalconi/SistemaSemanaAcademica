@@ -10,6 +10,7 @@
 	<link href="{{ asset('/css/grid.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/login.css') }}" rel="stylesheet">
 	<script type="text/javascript" src="{{ asset('js/jquery.2.2.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
 
 
 </head>

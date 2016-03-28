@@ -52,12 +52,12 @@ class TaskController extends Controller {
 	}
 
 	private function showQuinta()
-	{		return DB::table('tasks')->where('dia', '=', 'quinta')->get();	}
+	{		return DB::table('tasks')->where('inicio', '=', date('2016-05-05'))->get();	}
 
 	private function showSexta()
-	{		return DB::table('tasks')->where('dia', '=', 'sexta')->get();	}
+	{		return DB::table('tasks')->where('inicio', '=', date('2016-05-05'))->get();	}
 
 	private function showSabado()
-	{		return DB::table('tasks')->where('dia', '=', 'sabado')->get();	}
+	{		return DB::table('tasks')->whereDay('inicio', '=', date('05'))->get();	}
 
 }

@@ -2,6 +2,12 @@
     Grid System
 \*------------------------------*/
 
+
+.leftbox{
+  float: left;
+  margin-right: 15px;
+}
+
 .linha,
 .coluna {
     box-sizing: border-box;

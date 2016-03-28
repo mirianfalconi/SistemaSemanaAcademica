@@ -13,8 +13,8 @@ class CreateTasksTable extends Migration {
 			$table->increments('id');
 			$table->string('curso');
 			$table->string('professor');
-			$table->string('dia');
-			$table->string('horario');
+			$table->timestamp('inicio');
+			$table->timestamp('fim');
 		});
 	}
 
