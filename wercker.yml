@@ -1,6 +1,6 @@
 box: wercker/default
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: app
+        psr4_prefix: app
         src_path: app
