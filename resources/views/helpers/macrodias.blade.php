@@ -8,7 +8,6 @@
         @endforeach
       @endforeach
     </div>
-</div>
   <div class="coluna centro inteira">Sexta-Feira</div>
     <div class="linha">
         @foreach ($sexta as $tasks)

@@ -1,7 +1,7 @@
-<?php namespace App;
+<?php namespace app;
 
 use Illuminate\Database\Eloquent\Model;
-use App\User;
+use app\User;
 
 class Task extends Model {
 
@@ -10,7 +10,7 @@ class Task extends Model {
 
 	public function users()
     {
-        return $this->belongsToMany('App\User', 'task_user');
+        return $this->belongsToMany('app\User', 'task_user');
     }
 
 }
