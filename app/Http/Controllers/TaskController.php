@@ -26,19 +26,18 @@ class TaskController extends Controller {
 	public function index()
 	{
 			return view('tasks', [
-			'quinta' => $this->showquinta(),
-			'sexta'  => $this->showsexta(),
-			'sabado' => $this->showsabado()
+			'quinta' => $this->showDia(5),
+			'sexta'  => $this->showDia(6),
+			'sabado' => $this->showDia(7)
 		]);
 	}
 
 	public function create()
 	{
-		foreach ($this->user->tasks as $relaciona)
-		{  $taskes[] = DB::table('tasks')->where('id', '=', $relaciona->pivot->task_id)->get();		}
-
 		return view('taskpost', [
-			'sabado' => $taskes
+			'quinta' => $this->showUserDia(5),
+			'sexta'  => $this->showUserDia(6),
+			'sabado' => $this->showUserDia(7)
 		]);
 	}
 
@@ -51,13 +50,34 @@ class TaskController extends Controller {
 		}	catch(\Exception $e) {	}
 	}
 
-	private function showQuinta()
-	{		return DB::table('tasks')->where('inicio', '=', date('2016-05-05'))->get();	}
+	private function showUserDia($dia)
+	{
+		foreach ($this->user->tasks as $relaciona)
+		{
+			$taskes[] = DB::table('tasks')
+				->where('id', '=', $relaciona->pivot->task_id)
+				->whereDay('inicio', '=', date($dia))
+				->orderBy('inicio')
+				->get();
 
-	private function showSexta()
-	{		return DB::table('tasks')->where('inicio', '=', date('2016-05-05'))->get();	}
+			$taskes[] = DB::table('tasks')
+				->where('diatodo', '=', $relaciona->pivot->task_id)
+				->whereDay('inicio', '=', date($dia))
+				->orderBy('inicio')
+				->get();
+		}
+		return $taskes;
+	}
 
-	private function showSabado()
-	{		return DB::table('tasks')->whereDay('inicio', '=', date('05'))->orderBy('inicio')->get();	}
+	private function showDia($dia)
+	{
+		$taskes[] = DB::table('tasks')
+			->whereDay('inicio', '=', date($dia))
+			->orderBy('inicio')
+			->get();
+
+		return $taskes;
+	}
+
 
 }

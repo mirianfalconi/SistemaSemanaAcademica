@@ -6,7 +6,7 @@ use app\User;
 class Task extends Model {
 
 	protected $table = 'tasks';
-	protected $fillable = ['id', 'curso', 'professor', 'inicio', 'fim'];
+	protected $fillable = ['id', 'curso', 'professor', 'inicio', 'fim', 'diatodo'];
 
 	public function users()
     {

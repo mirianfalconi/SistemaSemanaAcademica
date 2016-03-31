@@ -15,6 +15,7 @@ class CreateTasksTable extends Migration {
 			$table->string('professor');
 			$table->timestamp('inicio');
 			$table->timestamp('fim');
+			$table->integer('diatodo');
 		});
 	}
 

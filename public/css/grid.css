@@ -2,7 +2,6 @@
     Grid System
 \*------------------------------*/
 
-
 .leftbox{
   float: left;
   margin-right: 15px;
@@ -14,24 +13,21 @@
     word-wrap: break-word;
 }
 
-.coluna  {
-    margin-left: 1.6%;
-}
-
 
 @media only screen and (max-width: 550px) {
-    .linha
+    .coluna2
     {
-        float: none !important;
-        width: auto !important;
+        width: 96.8% !important;
     }
-
-    .coluna + .coluna {
-        margin-left: 0;
-    }
-
-
 }
+
+@media screen and (min-width: 551px) and (max-width: 768px) {
+    .coluna2
+    {
+        width: 47% !important;
+    }
+}
+
 
 /*------------------------------*\
     Styling
@@ -45,8 +41,8 @@ input[type=checkbox]:checked + label {
 }
 
 
-form {
-  margin-left: 1.6%;
+.todo {
+  margin: 1.2%;
 }
 
 body {
@@ -70,6 +66,8 @@ body {
   background: #3498db;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  float: right;
+  margin: 2%;
 }
 
 .btn:hover {
@@ -78,7 +76,7 @@ body {
   text-decoration: none;
 }
 
-.coluna {
+.coluna2, .coluna {
     background: #eee;
     border-radius: 4px;
     color: #777;
@@ -87,17 +85,29 @@ body {
     margin-bottom: 8px;
 }
 
-.linha {
-  -webkit-flex-direction: column;
-  display: flex;
-  flex-direction: column;
-  float: left;
-  width: 32.2666666667%;
+.colunaInteira {
+    width: 96.8%;
 }
 
+ .coluna2 {
+    float: left;
+    width: 31.2666666667%;
+    margin-left: 1.6%;
+    position: relative;
+}
 
-.coluna .coluna {
-    color: #eee;
-    background: #333;
-    border-color: #000;
+.coluna .coluna2 {
+  color: #eee;
+  background: #333;
+  border-color: #000;
+}
+
+.linha:before,
+.linha:after {
+  content: " ";
+  display: table;
+}
+
+.linha:after {
+  clear: both;
 }
