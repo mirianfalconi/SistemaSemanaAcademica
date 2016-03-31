@@ -1,6 +1,6 @@
-<?php namespace app;
+<?php namespace App;
 
-use app\Task;
+use App\Task;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -19,7 +19,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 		public function tasks()
   	{
-			return $this->belongsToMany('app\Task', 'task_user')
+			return $this->belongsToMany('App\Task', 'task_user')
 			->withPivot('task_id');
 
 		}

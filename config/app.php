@@ -141,13 +141,13 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'app\Providers\AppServiceProvider',
-		'app\Providers\BusServiceProvider',
-		'app\Providers\ConfigServiceProvider',
-		'app\Providers\EventServiceProvider',
-		'app\Providers\RouteServiceProvider',
-		'app\Providers\BladeServiceProvider',
-		'app\Providers\HtmlServiceProvider',
+		'App\Providers\AppServiceProvider',
+		'App\Providers\BusServiceProvider',
+		'App\Providers\ConfigServiceProvider',
+		'App\Providers\EventServiceProvider',
+		'App\Providers\RouteServiceProvider',
+		'App\Providers\BladeServiceProvider',
+		'App\Providers\HtmlServiceProvider',
 
 	],
 

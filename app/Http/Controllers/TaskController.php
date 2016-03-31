@@ -1,11 +1,11 @@
-<?php namespace app\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use Auth;
-use app\Task;
-use app\User;
+use App\Task;
+use App\User;
 use DB;
-use app\Http\Requests;
-use app\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use Request;
 
 class TaskController extends Controller {
