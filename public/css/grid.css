@@ -45,6 +45,19 @@ input[type=checkbox]:checked + label {
   margin: 1.2%;
 }
 
+.finger{
+position:absolute;
+bottom: 170px;
+left: 330px;
+height: 60px;
+width: 60px;
+}
+.login {
+  height: 30px;
+  width: 30px;
+}
+
+
 body {
 
     font-family: "Times New Roman", Georgia, Serif;

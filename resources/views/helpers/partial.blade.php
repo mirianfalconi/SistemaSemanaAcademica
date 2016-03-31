@@ -1,3 +1,9 @@
+@define i = 0;
+@if (i == 2)
+  </div>
+  <div class="linha">
+@endif
+
 @if ($task->diatodo != 0)
   <input type="checkbox" id='x{{ $task->diatodo }}' name="task[{{ $task->diatodo }}]" value='{{ $task->diatodo }}'>
   <label for='x{{ $task->diatodo }}' class="coluna2">

@@ -390,6 +390,12 @@ output {
   display: none;
   visibility: hidden;
 }
+
+.collapse:checked {
+  display: block;
+  visibility: visible;
+}
+
 @media (min-width: 768px) {
 }
 .nav {
