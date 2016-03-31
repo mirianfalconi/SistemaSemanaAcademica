@@ -46,7 +46,7 @@ class TaskController extends Controller {
 
 		try{
 			$this->user->tasks()->sync($request::get('task'));
-			return redirect('create');
+			return redirect('inscricao/create');
 		}	catch(\Exception $e) {	}
 	}
 

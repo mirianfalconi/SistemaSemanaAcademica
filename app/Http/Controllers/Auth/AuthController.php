@@ -9,7 +9,7 @@ class AuthController extends Controller {
 
 
 	use AuthenticatesAndRegistersUsers;
-	protected $redirectPath = '/';
+	protected $redirectPath = '/inscricao';
 
 	public function __construct(Guard $auth, Registrar $registrar)
 	{
