@@ -1,56 +1,98 @@
+{{--*/ $i = '1' /*--}}
 <div class="todo">
 
-  <div class="coluna centro inteira">Quinta-Feira</div>
-    <div class="linha">
-      @foreach ($quinta as $tasks)
-        @foreach ($tasks as $task)
-          @include('helpers.partial')
-        @endforeach
+
+<input  type='hidden' id='quebra1' value='0000-00-00 00:00:00'>
+  <div class="coluna centro inteira">Quinta-Feira 05/05/2016</div>
+  @foreach ($quinta as $tasks)
+  <div class='linha'>
+      @foreach ($tasks as $task)
+        <div class='quebra1{{ $i }}'>
+        <script>
+
+          var i = '{{ $i }}';
+          var agora = '{{ $task->inicio }}';
+          var antes = $('#quebra1').val();
+
+          if(antes == '0000-00-00 00:00:00'){
+            $('#quebra1').val(agora);
+          }
+
+          if(antes != agora){
+            $('#quebra1').val(agora);
+            $( ".quebra1"+i ).html("</div><div class='linha'>");
+          }
+
+
+        </script>
+        @include('helpers.partial')
+        {{--*/ $i++ /*--}}
+      </div>
       @endforeach
     </div>
-  <div class="coluna centro inteira">Sexta-Feira</div>
-    <div class="linha">
-        @foreach ($sexta as $tasks)
-          @foreach ($tasks as $task)
-            @include('helpers.partial')
-          @endforeach
-        @endforeach
-    </div>
+  @endforeach
 
-  <div class="coluna centro inteira">Sábado</div>
-    <div class="linha">
-      @foreach ($sabado as $tasks)
-        @foreach ($tasks as $task)
-          @include('helpers.partial')
-        @endforeach
+{{--*/ $i = '1' /*--}}
+
+<input  type='hidden' id='quebra2' value='0000-00-00 00:00:00'>
+  <div class="coluna centro inteira">Sexta-Feira 06/05/2016</div>
+@foreach ($sexta as $tasks)
+    <div class='linha'>
+      @foreach ($tasks as $task)
+        <div class='quebra2{{ $i }}'>
+        <script>
+
+          var i = '{{ $i }}';
+          var agora = '{{ $task->inicio }}';
+          var antes = $('#quebra2').val();
+
+          if(antes == '0000-00-00 00:00:00'){
+            $('#quebra2').val(agora);
+          }
+
+          if(antes != agora){
+            $('#quebra2').val(agora);
+            $( ".quebra2"+i ).html("</div><div class='linha'>");
+          }
+
+
+        </script>
+        @include('helpers.partial')
+        {{--*/ $i++ /*--}}
+        </div>
       @endforeach
-    </div>
+  </div>
+@endforeach
+
+{{--*/ $i = '1' /*--}}
+
+<input  type='hidden' id='quebra3' value='0000-00-00 00:00:00'>
+  <div class="coluna centro inteira">Sábado 07/05/2016</div>
+@foreach ($sabado as $tasks)
+  <div class='linha'>
+      @foreach ($tasks as $task)
+        <div class='quebra3{{ $i }}'>
+        <script>
+
+          var i = '{{ $i }}';
+          var agora = '{{ $task->inicio }}';
+          var antes = $('#quebra3').val();
+
+          if(antes == '0000-00-00 00:00:00'){
+            $('#quebra3').val(agora);
+          }
+
+          if(antes != agora){
+            $('#quebra3').val(agora);
+            $( ".quebra3"+i ).html("</div><div class='linha'>");
+          }
 
 
-  <script>
-      $( document ).ready( function() {
+        </script>
+        @include('helpers.partial')
+        {{--*/ $i++ /*--}}
+        </div>
+      @endforeach
+</div>
+@endforeach
 
-        var name, valor;
-        var time = {};
-
-        $('input[id^="inicio"]').each( function() {
-
-            name = $(this).attr('id');
-
-            valor = $('input[id="'+name+'"]').val();
-
-             time = {
-                id: name,
-                value: valor
-            };
-
-            if (time.id != null && time.value == valor){
-            //  $( 'div[id=quebra"'+name+'"]' ).addClass( '.linhatransform .colunatransform' );
-
-            }
-
-        });
-
-        return false;
-      });
-  </script>

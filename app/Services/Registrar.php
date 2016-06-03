@@ -3,6 +3,10 @@
 use app\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
+
 
 class Registrar implements RegistrarContract {
 
@@ -10,12 +14,12 @@ class Registrar implements RegistrarContract {
 	public function validator(array $data)
 	{
 		return Validator::make($data, [
-			'cpf' =>'required|unique:users',
+			'cpf' =>'required|unique:users|max:255',
 			'nome' => 'required|max:255',
-			'telefone'=>'required',
+			'telefone'=>'required|max:255',
 			'email' => 'required|email|max:255|unique:users',
-			'password' => 'required|confirmed|min:6',
-			'curso' => 'required',
+			'faculdade'=>'required|max:255',
+			'instituicao'=>'required|max:255',
 		]);
 	}
 
@@ -26,8 +30,9 @@ class Registrar implements RegistrarContract {
 			'nome' => $data['nome'],
 			'telefone' => $data['telefone'],
 			'email' => $data['email'],
-			'password' => bcrypt($data['password']),
+			'faculdade'  => $data['faculdade'],
+			'instituicao'  => $data['instituicao'],
 		]);
-	}
 
+	}
 }

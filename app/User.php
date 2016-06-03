@@ -13,9 +13,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
 	protected $table = 'users';
-	protected $fillable = ['cpf', 'nome', 'email', 'telefone', 'curso', 'password'];
+	protected $fillable = ['cpf', 'nome', 'email', 'telefone', 'faculdade', 'instituicao'];
 
-	protected $hidden = ['password', 'remember_token'];
 
 		public function tasks()
   	{
@@ -25,3 +24,4 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		}
 
 }
+

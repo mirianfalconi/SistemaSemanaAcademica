@@ -17,29 +17,18 @@
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
+
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Início</a></li>
-				</ul>
-
+			<img id="logo" src="{{ asset('/img/SemanaAcademica200.png') }}">
+				<h2 class="titulo"><strong>Semana Acadêmica Integrada</strong></h2>
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><br><img class="login" src="img/row.jpg"></li>
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Registre-se</a></li>
+
 					@else
 						<li class="dropdown">
-							<a href="{{ url('/auth/logout') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->nome }} <span class="caret"></span></a>
-
+							<li class="nome">{{ Auth::user()->nome }}</li>
+							<li><a href="{{ url('/auth/logout') }}">Sair </a></li>
 						</li>
 					@endif
 				</ul>
@@ -47,6 +36,14 @@
 		</div>
 	</nav>
 
+
+<div class="info">
+				@if (Auth::guest())
+					<p >Selecione todas as atividades que deseja participar e em seguida clique em <strong>Confirmar Inscrição</strong></p>
+				@else
+					<p >Inscrição realizada com sucesso. Você está inscrito nas seguintes atividades.</p>
+				@endif
+</div>
 
 	@yield('content')
 

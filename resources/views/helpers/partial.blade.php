@@ -1,28 +1,10 @@
+
 @if ($task->diatodo != 0)
-  <input type="checkbox" id='x{{ $task->diatodo }}' name="task[{{ $task->diatodo }}]" value='{{ $task->diatodo }}'>
-  <label for='x{{ $task->diatodo }}' class="coluna2">
-
-    <script>
-
-      $('#x{{ $task->diatodo }}').click(function() {
-        if(this.checked)
-          $("#n{{ $task->diatodo }}").prop('checked', true);
-        else
-          $("#n{{ $task->diatodo }}").prop('checked', false);
-      });
-
-      $('#n{{ $task->diatodo }}').click(function() {
-        if(this.checked)
-          $("#x{{ $task->diatodo }}").prop('checked', true);
-        else
-          $("#x{{ $task->diatodo }}").prop('checked', false);
-      });
-
-    </script>
-
+  <input type="checkbox" id='x{{ $task->id }}' name="task[{{ $task->inicio }}|{{ $task->fim }}]" value='{{ $task->diatodo }}'>
+  <label for='x{{ $task->id }}' class="coluna2">
 @else
-  <input type="checkbox" id='n{{ $task->id }}' name="task[{{ $task->id }}]" value='{{ $task->id }}'>
-  <label for='n{{ $task->id }}' class="coluna2">
+  <input type="checkbox" id='x{{ $task->id }}'  name="task[{{ $task->inicio }}|{{ $task->fim }}]" value='{{ $task->id }}'>
+  <label for='x{{ $task->id }}' class="coluna2">
 @endif
     @if ($task->inicio)
       <span class="leftbox">

@@ -14,44 +14,137 @@
 }
 
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 650px) {
     .coluna2
     {
         width: 96.8% !important;
+
     }
+
+    .finger{
+    position:absolute;
+    bottom: 200px;
+    left: 280px;
+    height: 40px;
+    width: 40px;
+    }
+
 }
 
-@media screen and (min-width: 551px) and (max-width: 768px) {
+@media screen and (min-width: 651px) and (max-width: 768px) {
     .coluna2
     {
         width: 47% !important;
     }
+
+    .finger{
+    position:absolute;
+    bottom: 700px;
+    left: 310px;
+    height: 60px;
+    width: 60px;
+    }
 }
+
+@media screen and (min-width: 769px) and (max-width: 979px) {
+
+
+    .finger{
+    position:absolute;
+    bottom: 700px;
+    left: 310px;
+    height: 60px;
+    width: 60px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 979px) {
+
+    .finger{
+    position:absolute;
+    bottom: 950px;
+    left: 200px;
+    height: 40px;
+    width: 40px;
+    }
+}
+
+@media screen and (min-width: 980px) and (max-width: 1199px) {
+
+    .finger{
+    position:absolute;
+    bottom: 910px;
+    left: 300px;
+    height: 60px;
+    width: 60px;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+
+
+    .finger{
+    position:absolute;
+    bottom: 260px;
+    left: 350px;
+    height: 60px;
+    width: 60px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    .finger{
+    position:absolute;
+    bottom: 500px;
+    left: 500px;
+    height: 60px;
+    width: 60px;
+    }
+}
+
+
 
 
 /*------------------------------*\
     Styling
 \*------------------------------*/
-input[type=checkbox]{
+
+label:hover {
+	cursor: pointer;
+}
+
+input[type=radio]:hover + label, input[type=checkbox]:hover + label {
+	border: 3px;
+	border-color: #000;
+}
+input[type=radio], input[type=checkbox] {
   display: none;
 }
 
-input[type=checkbox]:checked + label {
-    outline: 2px solid #21b4d0;
+input[type=radio]:checked + label, input[type=checkbox]:checked + label  {
+    outline: 2px solid #d6e9c6;
+    color: #0E5358;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
 }
 
+input[type=radio]:disabled + label, input[type=checkbox]:disabled + label  {
+    opacity: 0.65;
+}
+
+.unch {
+  background: blue !important;
+}
 
 .todo {
   margin: 1.2%;
 }
 
-.finger{
-position:absolute;
-bottom: 170px;
-left: 330px;
-height: 60px;
-width: 60px;
+.none {
+  display: none;
 }
+
+
 .login {
   height: 30px;
   width: 30px;
@@ -66,7 +159,7 @@ body {
 
 .centro {
   text-align: center;
-  background: #00A3E8 !important;
+  background: #0E5358 !important;
   color: #fff !important;
   font-family: Century,Arial,Helvetica,sans-serif;
   font-size: 1.2em;
@@ -76,19 +169,36 @@ body {
   border-radius: 28px;
   border: none;
   color: #ffffff;
-  background: #3498db;
+  background: #0E5358;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  float: right;
   margin: 2%;
+  font-size: 1.2em;
 }
 
 .btn:hover {
-  background: #3cb0fd;
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #0E5358;
+  background-image: linear-gradient(to bottom, #0E5358, #3c763d);
   text-decoration: none;
+  cursor:pointer;
 }
 
+.btn:disabled {
+	background: #ccc;
+	background-image: none;
+	cursor: auto;
+}
+
+.nome {
+  position: relative;
+  display: block;
+  padding: 15px 20px;
+  color: #777777;
+  background-color: transparent;
+  position: relative;
+  display: block;
+  line-height: 20px;
+}
 .coluna2, .coluna {
     background: #eee;
     border-radius: 4px;
@@ -123,4 +233,59 @@ body {
 
 .linha:after {
   clear: both;
+}
+
+.titulo {
+  text-align: center;
+  color: #0E5358;
+  font-family: "terfens",sans-serif;
+}
+.info {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+.info {
+  color: #0E5358;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+#logo{
+  float:left;
+}
+
+td {
+	border-bottom: 1px solid black;
+}
+
+.td {
+	text-align: left;
+	padding: 1pt;
+	width: 50%;
+	font-size: 10pt;
+}
+
+.nr {
+	width: 10pt;
+}
+
+th {
+	height: 30pt;
+	padding: 10pt;
+	border: 1px solid;
+	border-color: #e7e7e7;
+	background-color: #f8f8f8;
+}
+
+table {
+	width: 100%;
+	padding: 5pt;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.dados {
+	font-size: 8pt;
 }

@@ -120,7 +120,7 @@ hr {
   select {
     background: #fff !important;
   }
-  .navbar {
+  -.navbar {
     display: none;
   }
 }

@@ -19,7 +19,7 @@ class RedirectIfAuthenticated {
 	{
 		if ($this->auth->check())
 		{
-			return new RedirectResponse(url('/inscricao'));
+			return new RedirectResponse(url('/index'));
 		}
 
 		return $next($request);

@@ -13,18 +13,6 @@ Form::macro('classes', function($nome, $placeholder, $pattern, $max)
 
 });
 
-Form::macro('pass', function($nome, $placeholder)
-{
-
-    return "<div class='form-group'>
-              <label class='col-md-4 control-label'>$placeholder</label>
-              <div class='col-md-6'>
-              <input type='password' name='$nome' class='form-control' max='45'/>
-            </div>
-            </div>";
-
-});
-
 Form::macro('enviar', function()
 {
 
@@ -40,3 +28,4 @@ Form::macro('enviar', function()
 
 
 ?>
+
