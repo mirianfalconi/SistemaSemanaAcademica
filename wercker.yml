@@ -1,6 +1,23 @@
-box: wercker/default
+box: ryanwinchester/wercker-laravel5
 suites:
     main:
         namespace: app
         psr4_prefix: app
         src_path: app
+
+build:
+  steps:
+    - script:
+        name: Install dependencies
+        code: |
+          composer install
+
+    - script:
+        name: Generate application key
+        code: |-
+          php artisan key:generate
+
+    - script:
+        name: Run phpunit
+        code: |-
+          phpunit
