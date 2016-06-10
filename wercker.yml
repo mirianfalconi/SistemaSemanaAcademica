@@ -16,8 +16,3 @@ build:
         name: Generate application key
         code: |-
           php artisan key:generate
-
-    - script:
-        name: Run phpunit
-        code: |-
-          phpunit
